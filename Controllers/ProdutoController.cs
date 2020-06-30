@@ -1,26 +1,32 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace mvc1.Controllers
 {
     public class ProdutoController : Controller
     {
-        public string Index()
+        public IActionResult Index(int? pagina, string ordem)
         {
-            var https = HttpContext.Request.IsHttps;
-            var caminho = HttpContext.Request.Path;
-            var status = HttpContext.Response.StatusCode;
-            var conexao = HttpContext.Connection.ToString();
+            if (!pagina.HasValue)
+                pagina = 1;
 
-            return "Index da Produto\r\n" + https + "\r\n" + caminho + "\r\n" + status + "\r\n" + conexao;
+            if (string.IsNullOrEmpty(ordem))
+                ordem = "Nome";
+
+            return Content(String.Format("pagina={0}&ordem={1}", pagina, ordem));
         }
-
         public IActionResult Detalhe()
         {
             //return RedirectToAction("Index", "Home",new { pagina = 1, ordem = "nome" });
             //var pessoa = new { ID = 1, Nome = "Vinicius" };
             //return new ObjectResult(pessoa); teste
 
-            return View();                                                                                                                                                  
+            return View();
+        }
+
+        public IActionResult Edit(int id)
+        {
+            return Content("Valor do Id = " + id);
         }
     }
 }
