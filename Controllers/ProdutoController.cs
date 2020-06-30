@@ -18,7 +18,7 @@ namespace mvc1.Controllers
         {
             //return RedirectToAction("Index", "Home",new { pagina = 1, ordem = "nome" });
             //var pessoa = new { ID = 1, Nome = "Vinicius" };
-            //return new ObjectResult(pessoa);
+            //return new ObjectResult(pessoa); teste
 
             return View();                                                                                                                                                  
         }
