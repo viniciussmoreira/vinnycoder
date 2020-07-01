@@ -45,9 +45,17 @@ namespace mvc_core
             app.UseRouting();
 
             app.UseAuthorization();
-
+            
             app.UseEndpoints(endpoints =>
             {
+                //endpoints.MapControllerRoute(
+                //    "PorDataLançamento",
+                //    "produto/lancamentos/{ano}/{mes}",
+                //    new { controller = "Produto", action = "DataLancamento" },
+                //    new { ano = @"2013|2017", mes = @"\d{2}" }
+
+                //    );
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

@@ -9,21 +9,25 @@ using mvc_core.Models;
 
 namespace mvc_core.Controllers
 {
+    [Route("[controller]/[action]")]
+    [Route("")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
         public HomeController(ILogger<HomeController> logger)
+        { _logger = logger; }
+
+
+        public string Lista()
         {
-            _logger = logger;
+            return "action lista";
         }
 
         public IActionResult Index()
         {
-           
-
             return View();
         }
+
 
         public IActionResult Privacy()
         {

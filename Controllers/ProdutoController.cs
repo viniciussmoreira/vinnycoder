@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using System;
 
 namespace mvc1.Controllers
 {
+    //[Route("[controller]/[action]")]
     public class ProdutoController : Controller
     {
         public IActionResult Index(int? pagina, string ordem)
@@ -27,6 +29,12 @@ namespace mvc1.Controllers
         public IActionResult Edit(int id)
         {
             return Content("Valor do Id = " + id);
+        }
+
+        [Route("produto/lancamentos/{ano:int}/{mes:range(1,12)}")]
+        public IActionResult DataLancamento(int ano, int mes)
+        {
+            return Content(ano + "/" + mes);
         }
     }
 }
