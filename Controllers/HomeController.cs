@@ -9,8 +9,8 @@ using mvc_core.Models;
 
 namespace mvc_core.Controllers
 {
-    [Route("[controller]/[action]")]
-    [Route("")]
+
+    [Route("[controller]/[action]")]    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -28,6 +28,10 @@ namespace mvc_core.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {

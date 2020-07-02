@@ -4,7 +4,7 @@ using System;
 
 namespace mvc1.Controllers
 {
-    //[Route("[controller]/[action]")]
+    [Route("[controller]/[action]")]
     public class ProdutoController : Controller
     {
         public IActionResult Index(int? pagina, string ordem)

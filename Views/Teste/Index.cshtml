@@ -1,0 +1,18 @@
+﻿@{
+    @using mvc_core;
+
+    //var end = ViewData["Endereco"] as Endereco; usa dinamic
+}
+
+@*<h1>@ViewBag["msg"] hoje é @ViewBag["data"]</h1>*@
+<h1>@ViewBag.msg hoje é @ViewBag.data</h1>
+
+<h3>
+
+    @ViewBag.Endereco.Nome <br />
+    @ViewBag.Endereco.Rua<br />
+    @ViewBag.Endereco.Cidade<br />
+    @ViewBag.Endereco.Estado<br />
+
+
+</h3>
